@@ -1,0 +1,20 @@
+<div>
+  <h1>Event List</h1>
+  <b-table striped hover :items='items' :fields='fields'>
+    <template slot='statusBadge' slot-scope='props'>
+      <event-badge :status='props.item.status'> {{ props.item.status }} </event-badge>
+    </template>
+    <template slot='link' slot-scope='row'>
+      <b-link :href='row.item.url'>
+        <font-awesome-icon :icon='linkIcon'/>
+      </b-link>
+    </template>
+    <template slot='actions' slot-scope='row'>
+
+      <b-link :href='row.item.url'>
+        <font-awesome-icon :icon='editIcon'/>
+        <!--font-awesome-icon :icon='deleteIcon'/-->
+      </b-link>
+    </template>
+  </b-table>
+</div>
