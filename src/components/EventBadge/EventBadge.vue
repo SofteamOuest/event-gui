@@ -2,23 +2,8 @@
   <b-badge :variant="statusFn">{{ status }}</b-badge>
 </template>
 
-<script>
-  export default {
-    name: 'event-badge',
-    props: ['status'],
-    data() {
-      return {}
-    },
-    computed: {
-      statusFn() {
+<script src="./EventBadge.js">
 
-        if (this.status === 'canceled') {
-          return 'secondary'
-        }
-        return 'primary'
-      }
-    }
-  }
 </script>
 
 <style scoped>
