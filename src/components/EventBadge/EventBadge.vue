@@ -12,7 +12,7 @@
     computed: {
       statusFn() {
 
-        if (this.status == 'canceled') {
+        if (this.status === 'canceled') {
           return 'secondary'
         }
         return 'primary'

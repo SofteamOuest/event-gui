@@ -1,12 +1,9 @@
-<template>
-  <div>{{ $route.params.id }} {{ title }} {{ composer }} {{ status }} {{ url }}</div>
+<template src='./Event.html'>
+
 </template>
 
-<script>
-  export default {
-    name: 'event',
-    props: ['title', 'composer', 'status', 'url']
-  }
+<script src='./Event.js'>
+
 </script>
 
 <style scoped>

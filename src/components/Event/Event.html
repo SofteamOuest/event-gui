@@ -1,0 +1,31 @@
+<b-form>
+  <b-form-group @submit="onSubmit" id="Title"
+                label="Title"
+                label-for="Title">
+    <b-form-input
+      v-model="data.title">
+    </b-form-input>
+  </b-form-group>
+  <b-form-group id="Composer"
+                label="Composer"
+                label-for="Composer">
+    <b-form-input
+      v-model="data.composer">
+    </b-form-input>
+  </b-form-group>
+  <b-form-group id="Status"
+                label="Status"
+                label-for="Status">
+    <b-form-input
+      v-model="data.status">
+    </b-form-input>
+  </b-form-group>
+  <b-form-group id="URL"
+                label="URL"
+                label-for="URL">
+    <b-form-input
+      v-model="data.url">
+    </b-form-input>
+  </b-form-group>
+  <b-button type="submit" variant="primary" @click="onSubmit">Submit</b-button>
+</b-form>
