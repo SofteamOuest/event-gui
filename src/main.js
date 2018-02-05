@@ -9,8 +9,20 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import '@fortawesome/fontawesome/styles.css'
 
-Vue.config.productionTip = false
-Vue.use(BootstrapVue)
+import authorize from 'oauth2-implicit/build'
+
+Vue.config.productionTip = false;
+Vue.use(BootstrapVue);
+
+
+const credentials = authorize({
+  auth_uri: 'https://littlebitscloud.cc/oauth/authorize',
+  client_id: 'cloudbit-visualizer',
+  scope: ['read'],
+  state: {
+    location: window.location
+  },
+});
 
 /* eslint-disable no-new */
 new Vue({
