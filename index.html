@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>event-gui</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>event-gui</title>
+  <script src="http://keycloak.k8.wildwidewest.xyz/auth/js/keycloak.js"></script>
+  <script>
+    let keycloakConfig = {
+      "realm": "meltingpoc",
+      "auth-server-url": "http://keycloak.k8.wildwidewest.xyz/auth",
+      "clientId": "meltingpoc",
+      "policy-enforcer": {}
+    };
+    var keycloak = Keycloak(keycloakConfig);
+    keycloak.init({
+      onLoad: 'login-required'
+    }).success(function (authenticated) {
+      alert(authenticated ? 'authenticated' : 'not authenticated');
+    }).error(function () {
+      alert('failed to initialize');
+    });
+  </script>
+</head>
+<body>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+</body>
 </html>
