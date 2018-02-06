@@ -3,7 +3,9 @@ import axios from 'axios/dist/axios'
 export default {
   name: 'Event',
   data() {
-    return {data: {}}
+    return {
+      data: {}
+    }
   },
   created() {
     axios.get('http://localhost:3000/events/' + this.$route.params.id)

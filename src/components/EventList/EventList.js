@@ -8,7 +8,7 @@ import faExternalLinkAlt from '@fortawesome/fontawesome-free-solid/faExternalLin
 import faEdit from '@fortawesome/fontawesome-free-solid/faEdit'
 import faDelete from '@fortawesome/fontawesome-free-solid/faArchive'
 
-const eventURL = 'http://localhost:3000/events';
+const eventURL = 'http://localhost:8090/events';
 
 export default {
   name: 'EventList',
@@ -38,8 +38,9 @@ export default {
       .catch(e => {
         //this.errors.push(e)
       });
-  }, beforeRouteEnter(to, from, next) {
-    
+  },
+  beforeRouteEnter(to, from, next) {
+
     axios.get(eventURL)
       .then(response => {
 
