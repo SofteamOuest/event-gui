@@ -2,7 +2,7 @@
 
 </template>
 
-<script src="./Login.js">
+<script src="./Home.js">
 
 </script>
 

@@ -31,7 +31,9 @@ export default {
     }
   },
   created() {
-    axios.get(eventURL)
+
+
+    axios.get(eventURL, {'headers': {'Access-Control-Allow-Origin': 'http://localhost:8081'}})
       .then(response => {
         this.items = response.data;
       })
@@ -40,6 +42,7 @@ export default {
       });
   },
   beforeRouteEnter(to, from, next) {
+
 
     axios.get(eventURL)
       .then(response => {

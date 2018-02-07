@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
+import Home from '@/components/Home/Home.vue'
 import Login from '@/components/Login/Login.vue'
 import Event from '@/components/Event/Event.vue'
 import EventList from '@/components/EventList/EventList.vue'
@@ -7,7 +9,8 @@ import EventList from '@/components/EventList/EventList.vue'
 Vue.use(Router)
 
 export default new Router({
-  routes: [{
+  routes: [
+    {
       path: '/login',
       name: 'Login',
       component: Login
@@ -24,8 +27,8 @@ export default new Router({
     },
     {
       path: '*',
-      name: 'EventList',
-      component: EventList
+      name: 'Home',
+      component: Home
     }
   ]
 })
