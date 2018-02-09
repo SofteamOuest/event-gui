@@ -33,7 +33,17 @@ export default {
   created() {
 
 
-    axios.get(eventURL, {'headers': {'Access-Control-Allow-Origin': 'http://localhost:8081'}})
+    let config = {
+      headers:
+        {
+          'Access-Control-Allow-Origin': '*',
+          'Authorization': 'Bearer ' + sessionStorage.getItem("access_token"),
+          'Accept': 'application/json'
+        }
+    };
+
+    console.log('events');
+    axios.get(eventURL, config)
       .then(response => {
         this.items = response.data;
       })
@@ -44,9 +54,18 @@ export default {
   beforeRouteEnter(to, from, next) {
 
 
-    axios.get(eventURL)
-      .then(response => {
+    let config = {
+      headers:
+        {
+          'Access-Control-Allow-Origin': '*',
+          'Authorization': 'Bearer ' + sessionStorage.getItem("access_token"),
+          'Accept': 'application/json'
+        }
+    };
 
+    console.log('events');
+    axios.get(eventURL, config)
+      .then(response => {
         next(vm => {
 
           vm.items = response.data;

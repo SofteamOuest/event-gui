@@ -1,5 +1,7 @@
 import axios from 'axios/dist/axios'
 
+const eventURL = 'http://localhost:8090/events';
+
 export default {
   name: 'Event',
   data() {
@@ -8,7 +10,18 @@ export default {
     }
   },
   created() {
-    axios.get('http://localhost:3000/events/' + this.$route.params.id)
+
+    let config = {
+      headers:
+        {
+          'Access-Control-Allow-Origin': '*',
+          'Authorization': 'Bearer ' + sessionStorage.getItem("access_token"),
+          'Accept': 'application/json'
+        }
+    };
+
+    console.log('one event');
+    axios.get(eventURL + '/' + this.$route.params.id, config)
       .then(response => {
         // JSON responses are automatically parsed.
         this.data = response.data

@@ -12,7 +12,7 @@ export default {
         client_id: 'meltingpoc',
         client_secret: '4a5bac8a-87e2-4ce1-a417-75f9f70bebef',
         response_type: "id_token token",
-        redirect_uri: 'http://localhost:8081',
+        redirect_uri: 'http://localhost:8080',
         grant_type: 'implicit',
         nonce: 1
       });
